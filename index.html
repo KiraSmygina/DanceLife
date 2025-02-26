@@ -63,13 +63,14 @@
        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
     
-       ym(100072648, "init", {
+       ym(100071738, "init", {
             clickmap:true,
             trackLinks:true,
-            accurateTrackBounce:true
+            accurateTrackBounce:true,
+            webvisor:true
        });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/100072648" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript><div><img src="https://mc.yandex.ru/watch/100071738" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 </head>
 <body>
@@ -118,7 +119,7 @@
             <p>Свяжитесь с нами, чтобы записаться на занятия:</p>
             <p>Телефон: +7 (123) 456-78-90</p>
             <p>Email: info@dancestudio.com</p>
-            <p>Адрес: г. Vladimir, ул. Пушкина, д. 10</p>
+            <p>Адрес: г. Владимир, ул. Пушкина, д. 10</p>
 
             <div class="button-container">
                 <a href="#" class="button" data-toggle="modal" data-target="#mainModal" style="color: white;">Записаться на пробное занятие</a>
@@ -164,11 +165,11 @@
                     <form id="loginForm">
                         <div class="form-group">
                             <label for="loginEmail">Email</label>
-                            <input type="email" class="form-control" id="loginEmail" placeholder="Введите email" required>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="Введите email" required autocomplete="username">
                         </div>
                         <div class="form-group">
                             <label for="loginPassword">Пароль</label>
-                            <input type="password" class="form-control" id="loginPassword" placeholder="Введите пароль" required>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Введите пароль" required autocomplete="current-password">
                         </div>
                         <button type="submit" class="btn btn-primary">Войти</button>
                     </form>
@@ -193,11 +194,11 @@
                     <form id="registerForm">
                         <div class="form-group">
                             <label for="registerEmail">Email</label>
-                            <input type="email" class="form-control" id="registerEmail" placeholder="Введите email" required>
+                            <input type="email" class="form-control" id="registerEmail" placeholder="Введите email" required autocomplete="username">
                         </div>
                         <div class="form-group">
                             <label for="registerPassword">Пароль</label>
-                            <input type="password" class="form-control" id="registerPassword" placeholder="Введите пароль" required>
+                            <input type="password" class="form-control" id="registerPassword" placeholder="Введите пароль" required autocomplete="new-password">
                         </div>
                         <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
                     </form>
@@ -213,7 +214,7 @@
         <div class="cookie-notification__header">Предупреждение о сборе статистики</div>
         <div class="cookie-notification__body">
             <p>Этот сайт собирает статистику посещения и данные посетителей.</p>
-            <p>["https://kirasmygina.github.io/DanceLife/"]</p>
+            <p>[Ссылка на Пользовательское соглашение вашего сайта или на Политику конфиденциальности вашего сайта]</p>
         </div>
         <div class="cookie-notification__buttons">
             <button class="cookie-notification__button" id="yes">Я согласен</button>
@@ -307,10 +308,11 @@
 
         // Инициализация Яндекс.Метрики
         function initCounter() {
-            ym(100072648, 'init', {
+            ym(100071738, 'init', { // Замените 100071738 на ваш ID
                 clickmap: true,
                 trackLinks: true,
-                accurateTrackBounce: true
+                accurateTrackBounce: true,
+                webvisor: true
             });
         }
     </script>
