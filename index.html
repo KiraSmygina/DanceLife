@@ -6,6 +6,7 @@
     <title>Танцевальная студия</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.js"></script>
     <style>
@@ -207,27 +208,77 @@
         </div>
     </div>
 
-    <div class="cookie-notification">
-        <div class="cookie-notification__header">Предупреждение о сборе статистики</div>
-        <div class="cookie-notification__body">
-            <p>Этот сайт собирает статистику посещения и данные посетителей.</p>
-            <p><a href="https://kirasmygina.github.io/DanceLife/">Политика конфиденциальности</a></p>
-        </div>
-        <div class="cookie-notification__buttons">
-            <button class="cookie-notification__button" id="yes">Я согласен</button>
-        </div>
-    </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
     <script>
+        // Функция для отправки логов на сервер
+        function logEvent(event) {
+            fetch('/api/log', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ event }),
+            })
+            .then(response => response.json())
+            .then(data => console.log(data.message))
+            .catch((error) => console.error('Ошибка:', error));
+        }
+
+        // Функция для сохранения пользователя в localStorage
+        function saveUser(email, password) {
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            users.push({ email, password });
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+
+        // Функция для проверки пользователя в localStorage
+        function checkUser(email, password) {
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            return users.some(user => user.email === email && user.password === password);
+        }
+
+        // Обработка формы регистрации
+        $('#registerForm').on('submit', function (event) {
+            event.preventDefault();
+            const email = $('#registerEmail').val();
+            const password = $('#registerPassword').val();
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            if (users.some(user => user.email === email)) {
+                alert('Пользователь с таким email уже существует.');
+            } else {
+                saveUser(email, password);
+                alert('Регистрация успешна!');
+                logEvent(`Регистрация успешна для email: ${email}`);
+                $('#registerModal').modal('hide');
+            }
+        });
+
+        // Обработка формы авторизации
+        $('#loginForm').on('submit', function (event) {
+            event.preventDefault();
+            const email = $('#loginEmail').val();
+            const password = $('#loginPassword').val();
+
+            if (checkUser(email, password)) {
+                alert('Авторизация успешна!');
+                logEvent(`Авторизация успешна для email: ${email}`);
+                $('#loginModal').modal('hide');
+            } else {
+                alert('Ошибка авторизации. Проверьте email и пароль.');
+                logEvent(`Ошибка авторизации для email: ${email}`);
+            }
+        });
+
+        // Логика для уведомления о cookies
         document.addEventListener('DOMContentLoaded', function () {
-            // Логика для уведомления о cookies
             const cookieNotification = document.querySelector('.cookie-notification');
             const cookieButton = document.querySelector('#yes');
 
-            if (!cookieNotification || !cookieButton) {
-                console.error('Элементы для уведомления о cookies не найдены!');
+            if (!cookieButton) {
+                console.error('Кнопка "Я согласен" не найдена!');
                 return;
             }
 
@@ -240,77 +291,17 @@
                 cookieNotification.classList.add('cookie-notification_hidden_yes');
                 initCounter();
             });
-
-            // Инициализация Яндекс.Метрики
-            function initCounter() {
-                ym(100071738, 'init', { // Замените 100071738 на ваш ID
-                    clickmap: true,
-                    trackLinks: true,
-                    accurateTrackBounce: true,
-                    webvisor: true
-                });
-            }
-
-            // Обработка формы регистрации
-            document.getElementById('registerForm')?.addEventListener('submit', function (event) {
-                event.preventDefault();
-                const email = document.getElementById('registerEmail').value;
-                const password = document.getElementById('registerPassword').value;
-
-                const users = JSON.parse(localStorage.getItem('users')) || [];
-                if (users.some(user => user.email === email)) {
-                    alert('Пользователь с таким email уже существует.');
-                } else {
-                    saveUser(email, password);
-                    alert('Регистрация успешна!');
-                    logEvent(`Регистрация успешна для email: ${email}`);
-                    $('#registerModal').modal('hide');
-                }
-            });
-
-            // Обработка формы авторизации
-            document.getElementById('loginForm')?.addEventListener('submit', function (event) {
-                event.preventDefault();
-                const email = document.getElementById('loginEmail').value;
-                const password = document.getElementById('loginPassword').value;
-
-                if (checkUser(email, password)) {
-                    alert('Авторизация успешна!');
-                    logEvent(`Авторизация успешна для email: ${email}`);
-                    $('#loginModal').modal('hide');
-                } else {
-                    alert('Ошибка авторизации. Проверьте email и пароль.');
-                    logEvent(`Ошибка авторизации для email: ${email}`);
-                }
-            });
-
-            // Функция для сохранения пользователя в localStorage
-            function saveUser(email, password) {
-                const users = JSON.parse(localStorage.getItem('users')) || [];
-                users.push({ email, password });
-                localStorage.setItem('users', JSON.stringify(users));
-            }
-
-            // Функция для проверки пользователя в localStorage
-            function checkUser(email, password) {
-                const users = JSON.parse(localStorage.getItem('users')) || [];
-                return users.some(user => user.email === email && user.password === password);
-            }
-
-            // Функция для отправки логов на сервер
-            function logEvent(event) {
-                fetch('/api/log', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ event }),
-                })
-                .then(response => response.json())
-                .then(data => console.log(data.message))
-                .catch((error) => console.error('Ошибка:', error));
-            }
         });
+
+        // Инициализация Яндекс.Метрики
+        function initCounter() {
+            ym(100071738, 'init', { // Замените 100071738 на ваш ID
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true
+            });
+        }
     </script>
 </body>
 </html>
