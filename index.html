@@ -34,14 +34,13 @@
        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
     
-       ym(100071738, "init", {
+       ym(100072648, "init", {
             clickmap:true,
             trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
+            accurateTrackBounce:true
        });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/100071738" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript><div><img src="https://mc.yandex.ru/watch/100072648" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 </head>
 <body>
@@ -101,7 +100,7 @@
     <footer>
         <p>&copy; 2024 DANCE LIFE. Все права защищены.</p>
     </footer>
-
+    
     <div class="modal fade" id="mainModal" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -198,13 +197,13 @@
             .then(data => console.log(data.message))
             .catch((error) => console.error('Ошибка:', error));
         }
-
+    
         // Обработка формы регистрации
         $('#registerForm').on('submit', function (event) {
             event.preventDefault();
             const email = $('#registerEmail').val();
             const password = $('#registerPassword').val();
-
+    
             const users = JSON.parse(localStorage.getItem('users')) || [];
             if (users.some(user => user.email === email)) {
                 alert('Пользователь с таким email уже существует.');
@@ -215,13 +214,13 @@
                 $('#registerModal').modal('hide');
             }
         });
-
+    
         // Обработка формы авторизации
         $('#loginForm').on('submit', function (event) {
             event.preventDefault();
             const email = $('#loginEmail').val();
             const password = $('#loginPassword').val();
-
+    
             if (checkUser (email, password)) {
                 alert('Авторизация успешна!');
                 logEvent(`Авторизация успешна для email: ${email}`); // Логируем событие
@@ -233,5 +232,4 @@
         });
     </script>
 </body>
-</html>
 </html>
