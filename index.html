@@ -54,6 +54,41 @@
         .cookie-notification__body {
             margin-bottom: 10px;
         }
+        /* Стили для модального окна */
+        .modal {
+            display: none; /* Скрыто по умолчанию */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Затемнение фона */
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
     </style>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
@@ -121,7 +156,7 @@
             <p>Адрес: г. Vladimir, ул. Пушкина, д. 10</p>
 
             <div class="button-container">
-                <a href="#" class="button" data-toggle="modal" data-target="#mainModal" style="color: white;">Записаться на пробное занятие</a>
+                <button id="book-appointment" class="btn btn-primary">Записаться на пробное занятие</button>
             </div>
         </section>
     </main>
@@ -130,144 +165,63 @@
         <p>&copy; 2024 DANCE LIFE. Все права защищены.</p>
     </footer>
     
-     <!-- Модальное окно для выбора действия -->
-    <div class="modal fade" id="mainModal" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="mainModalLabel">Добро пожаловать!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                        <span aria-hidden="true">×</span>
-                    </button>
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Запись на занятие</h2>
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label for="appointmentName">Имя</label>
+                    <input type="text" class="form-control" id="appointmentName" placeholder="Введите ваше имя" required>
                 </div>
-                <div class="modal-body">
-                    <p>Выберите действие:</p>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Авторизация</button>
-                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registerModal">Регистрация</button>
+                <div class="form-group">
+                    <label for="appointmentPhone">Телефон</label>
+                    <input type="tel" class="form-control" id="appointmentPhone" placeholder="Введите ваш телефон" required>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-                </div>
-            </div>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </form>
         </div>
     </div>
 
-    <!-- Модальное окно для авторизации -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Авторизация</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="loginForm">
-                        <div class="form-group">
-                            <label for="loginEmail">Email</label>
-                            <input type="email" class="form-control" id="loginEmail" placeholder="Введите email" required autocomplete="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="loginPassword">Пароль</label>
-                            <input type="password" class="form-control" id="loginPassword" placeholder="Введите пароль" required autocomplete="current-password">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Войти</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <script>
+        // Получаем элементы
+        const bookAppointmentButton = document.getElementById('book-appointment');
+        const appointmentModal = document.getElementById('appointmentModal');
+        const closeModalButton = document.querySelector('.close');
 
-    <!-- Модальное окно для регистрации -->
-    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="registerModalLabel">Регистрация</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="registerForm">
-                        <div class="form-group">
-                            <label for="registerEmail">Email</label>
-                            <input type="email" class="form-control" id="registerEmail" placeholder="Введите email" required autocomplete="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="registerPassword">Пароль</label>
-                            <input type="password" class="form-control" id="registerPassword" placeholder="Введите пароль" required autocomplete="new-password">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-                </div>
-            </div>
-        </div>
-    </div>
+        // Открываем модальное окно при клике на кнопку
+        bookAppointmentButton.addEventListener('click', function () {
+            appointmentModal.style.display = 'block';
+        });
 
-    <script type="text/javascript">
-        // Функция для сохранения пользователя
-        function saveUser(email, password) {
-            const users = JSON.parse(localStorage.getItem('users')) || [];
-            users.push({ email, password });
-            localStorage.setItem('users', JSON.stringify(users));
-        }
+        // Закрываем модальное окно при клике на крестик
+        closeModalButton.addEventListener('click', function () {
+            appointmentModal.style.display = 'none';
+        });
 
-        // Функция для проверки пользователя
-        function checkUser(email, password) {
-            const users = JSON.parse(localStorage.getItem('users')) || [];
-            return users.some(user => user.email === email && user.password === password);
-        }
-
-        // Функция для логирования событий
-        function logEvent(event) {
-            console.log(event); // Логируем событие в консоль
-        }
-
-        // Обработка формы регистрации
-        $('#registerForm').on('submit', function (event) {
-            event.preventDefault(); // Предотвращаем стандартное поведение формы
-
-            const email = $('#registerEmail').val();
-            const password = $('#registerPassword').val();
-
-            const users = JSON.parse(localStorage.getItem('users')) || [];
-            if (users.some(user => user.email === email)) {
-                alert('Пользователь с таким email уже существует.');
-            } else {
-                saveUser(email, password); // Сохраняем пользователя
-                alert('Регистрация успешна!');
-                logEvent(`Регистрация успешна для email: ${email}`); // Логируем событие
-
-                // Отправка события в Яндекс.Метрику
-                ym(100071738, 'reachGoal', '1'); // 100071738 — ID вашего счётчика
-
-                $('#registerModal').modal('hide'); // Закрываем модальное окно
+        // Закрываем модальное окно при клике вне его области
+        window.addEventListener('click', function (event) {
+            if (event.target === appointmentModal) {
+                appointmentModal.style.display = 'none';
             }
         });
 
-        // Обработка формы авторизации
-        $('#loginForm').on('submit', function (event) {
+        // Обработка формы записи на занятие
+        document.getElementById('appointmentForm').addEventListener('submit', function (event) {
             event.preventDefault(); // Предотвращаем стандартное поведение формы
 
-            const email = $('#loginEmail').val();
-            const password = $('#loginPassword').val();
+            const name = document.getElementById('appointmentName').value;
+            const phone = document.getElementById('appointmentPhone').value;
 
-            if (checkUser(email, password)) {
-                alert('Авторизация успешна!');
-                logEvent(`Авторизация успешна для email: ${email}`); // Логируем событие
-                $('#loginModal').modal('hide'); // Закрываем модальное окно
-            } else {
-                alert('Ошибка авторизации. Проверьте email и пароль.');
-                logEvent(`Ошибка авторизации для email: ${email}`); // Логируем событие
-            }
+            // Логируем данные
+            console.log('Имя:', name);
+            console.log('Телефон:', phone);
+
+            // Закрываем модальное окно
+            appointmentModal.style.display = 'none';
+
+            // Показываем сообщение об успешной отправке
+            alert('Спасибо, ваша заявка принята!');
         });
     </script>
     <div class="cookie-notification cookie-notification_hidden_yes">
