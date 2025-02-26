@@ -6,75 +6,26 @@
     <title>Танцевальная студия</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <script scr="script.js"></script>
-    <!--В примере используется стиль reset.css. Вы можете использовать свое решение.-->
+    <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <!--В примере используется библиотека js-cookie для работы с cookie. Вы можете использовать свое решение-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.js"></script>
     <style>
-        a {
-            text-decoration: none !important;
-        }
-        header {
-            background-color: #450145;
-            color: #fff;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        nav {
-            background-color: #f2f2f2;
-            padding: 10px;
-            display: flex;
-            justify-content: center; 
-        }
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            width: 100%;
-            height: 100%;
-        }
-        .cookie-notification {
-            position: fixed;
-            background-color: rgba(0, 0, 0, .8);
-            bottom: 0;
-            width: 100%;
-            color: white;
-            padding: 15px;
-        }
-        .cookie-notification_hidden_yes {
-            display: none;
-        }
-        .cookie-notification__header {
-            margin-bottom: 10px;
-            font-size: 23px;
-        }
-        .cookie-notification__body {
-            margin-bottom: 10px;
-        }
+        a { text-decoration: none !important; }
+        header { background-color: #450145; color: #fff; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        nav { background-color: #f2f2f2; padding: 10px; display: flex; justify-content: center; }
+        * { box-sizing: border-box; }
+        body { width: 100%; height: 100%; }
+        .cookie-notification { position: fixed; background-color: rgba(0, 0, 0, .8); bottom: 0; width: 100%; color: white; padding: 15px; z-index: 1000; }
+        .cookie-notification_hidden { display: none; }
+        .cookie-notification__header { margin-bottom: 10px; font-size: 23px; }
+        .cookie-notification__body { margin-bottom: 10px; }
     </style>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-       m[i].l=1*new Date();
-       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    
-       ym(100072648, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true
-       });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/100072648" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
+    <!-- Yandex.Metrika counter (This will be loaded conditionally) -->
+    <script id="metrika-script"></script>
 </head>
 <body>
     <header>
-        <img src="логотип танцевальной студии.png" alt="Логотип студии DANCE LIFE" class="logo">
+        <img src="" alt="Логотип студии DANCE LIFE" class="logo">
         <div class="title">
             <h1>DANCE LIFE</h1>
         </div>
@@ -86,57 +37,59 @@
         <a href="contact.html">Контакты</a>
         <a href="#" id="book-appointment" data-toggle="modal" data-target="#mainModal">Запись на пробное занятие</a>
     </nav>
-
     <main>
         <section id="about">
             <h2>О нас</h2>
             <p>Добро пожаловать в нашу танцевальную студию! Мы предлагаем широкий спектр танцевальных классов для людей всех возрастов и уровней подготовки.</p>
-            <img src="фотоо.jpg" alt="Современный танец" width="1000px" height="600px">
+            <img src="" alt="Современный танец" width="1000px" height="600px">
         </section>
         <section id="services">
             <h2>Наши направления</h2>
             <div class="service-grid">
                 <div class="service">
-                    <img src="современные танцы - contemporary.webp" alt="Современный танец">
+                    <img src="" alt="Современный танец">
                     <h3>Современный танец</h3>
-                    <p>Современный танец - это свобода выражения, импровизация и динамика.  У нас вы изучите техники современного танца,  развитие пластики и координации.</p>
+                    <p>Современный танец - это свобода выражения, импровизация и динамика. У нас вы изучите техники современного танца, развитие пластики и координации.</p>
                 </div>
                 <div class="service">
-                    <img src="хип хоп.png" alt="Хип-хоп">
+                    <img src="" alt="Хип-хоп">
                     <h3>Хип-хоп</h3>
-                    <p>Хип-хоп - это стиль, который позволяет выразить себя через ритм и движения. У нас вы освоите базовые элементы хип-хопа,  развитие ритмики и  координации.</p>
+                    <p>Хип-хоп - это стиль, который позволяет выразить себя через ритм и движения. У нас вы освоите базовые элементы хип-хопа, развитие ритмики и координации.</p>
                 </div>
                 <div class="service">
-                    <img src="балет.jpg" alt="Балет">
-                    <h3>Балет</h3>
-                    <p>Балет - это классика,  изящество  и  грация.  У нас вы  изучите  основы  балета,  развитие  пластики  и  координации.</p>
+                    <img src="" alt="Бальные танцы">
+                    <h3>Бальные танцы</h3>
+                    <p>Бальные танцы — это элегантность и грация, страсть и чувственность.  У нас вы изучите вальс, танго, фокстрот и другие танцы. Развитие пластики и артистизма.</p>
                 </div>
+            </div>
+        </section>
+        <section id="gallery">
+            <h2>Галерея</h2>
+            <div class="gallery-grid">
+                <img src="" alt="Фото танцоров" width="400px" height="250px">
+                <img src="" alt="Фото танцоров2" width="400px" height="250px">
+                <img src="" alt="Фото танцоров3" width="400px" height="250px">
+                <img src="" alt="Фото танцоров4" width="400px" height="250px">
             </div>
         </section>
         <section id="contact">
-            <h2>Контакты</h2>
-            <p>Свяжитесь с нами, чтобы записаться на занятия:</p>
-            <p>Телефон: +7 (123) 456-78-90</p>
-            <p>Email: info@dancestudio.com</p>
-            <p>Адрес: г. Vladimir, ул. Пушкина, д. 10</p>
-
-            <div class="button-container">
-                <a href="#" class="button" data-toggle="modal" data-target="#mainModal" style="color: white;">Записаться на пробное занятие</a>
-            </div>
+            <h2>Свяжитесь с нами</h2>
+            <p>Запишитесь на пробное занятие или задайте свои вопросы:</p>
+            <ul>
+                <li>Телефон: +7 (900) 123-45-67</li>
+                <li>Email: info@dancelife.ru</li>
+                <li>Адрес: г. Москва, ул. Танцевальная, д. 1</li>
+            </ul>
+            <p>Мы ждем вас!</p>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2024 DANCE LIFE. Все права защищены.</p>
-    </footer>
-    
     <div class="modal fade" id="mainModal" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="mainModalLabel">Добро пожаловать!</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                        <span aria-hidden="true">×</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -150,14 +103,13 @@
             </div>
         </div>
     </div>
-
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="loginModalLabel">Авторизация</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                        <span aria-hidden="true">×</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -179,14 +131,13 @@
             </div>
         </div>
     </div>
-
     <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="registerModalLabel">Регистрация</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                        <span aria-hidden="true">×</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -208,119 +159,104 @@
             </div>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        // Функция для отправки логов на сервер
-        function logEvent(event) {
-            fetch('/api/log', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ event }),
-            })
-            .then(response => response.json())
-            .then(data => console.log(data.message))
-            .catch((error) => console.error('Ошибка:', error));
-        }
-    
-        // Обработка формы регистрации
-        $('#registerForm').on('submit', function (event) {
-            event.preventDefault();
-            const email = $('#registerEmail').val();
-            const password = $('#registerPassword').val();
-    
-            const users = JSON.parse(localStorage.getItem('users')) || [];
-            if (users.some(user => user.email === email)) {
-                alert('Пользователь с таким email уже существует.');
-            } else {
-                saveUser (email, password);
-                alert('Регистрация успешна!');
-                logEvent(`Регистрация успешна для email: ${email}`); // Логируем событие
-                $('#registerModal').modal('hide');
-            }
-        });
-    
-        // Обработка формы авторизации
-        $('#loginForm').on('submit', function (event) {
-            event.preventDefault();
-            const email = $('#loginEmail').val();
-            const password = $('#loginPassword').val();
-    
-            if (checkUser (email, password)) {
-                alert('Авторизация успешна!');
-                logEvent(`Авторизация успешна для email: ${email}`); // Логируем событие
-                $('#loginModal').modal('hide');
-            } else {
-                alert('Ошибка авторизации. Проверьте email и пароль.');
-                logEvent(`Ошибка авторизации для email: ${email}`); // Логируем событие
-            }
-        });
-    </script>
-    <div class="cookie-notification cookie-notification_hidden_yes">
+    <div class="cookie-notification cookie-notification_hidden">
         <div class="cookie-notification__header">Предупреждение о сборе статистики</div>
         <div class="cookie-notification__body">
-       <p>Этот сайт собирает статистику посещения и данные посетителей.</p>
-      <p>["https://kirasmygina.github.io/DanceLife/"]</p>
+            <p>Этот сайт собирает статистику посещения и данные посетителей.</p>
+            <p><a href="/privacy-policy" style="color: blue;">Политика конфиденциальности</a></p>
         </div>
         <div class="cookie-notification__buttons">
             <button class="cookie-notification__button" id="yes">Я согласен</button>
         </div>
     </div>
-    <script type="text/javascript">
-        var messageElement = document.querySelector('.cookie-notification');
-        // Если нет cookies, то показываем плашку
-        if (!Cookies.get('agreement')) {
-            showMessage();
-        } else {
-            initCounter();
-        }
-        // Загружаем сам код счетчика сразу
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document,'script','//mc.yandex.ru/metrika/tag.js', 'ym')
-        // Функция добавляет класс к DOM-элементу. Вы можете использовать библиотеку jQuery или другой фреймворк
-        function addClass (o, c) {
-            var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g");
-            if (!o || re.test(o.className)) {
-                return;
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const cookieNotification = $('.cookie-notification');
+            const acceptButton = $('#yes');
+            const metrikaScript = $('#metrika-script'); // Скрипт для Метрики
+            const metrikaCounterId = 100072648; // Замените на свой ID счетчика
+        
+            function initCounter() {
+                // Инициализация Яндекс.Метрики (код скопирован из Яндекс.Метрики)
+                (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                m[i].l=1*new Date();
+                for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            
+                ym(metrikaCounterId, "init", {
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+                // Добавляем <noscript> часть кода (тоже скопировано из Яндекс.Метрики)
+                $('body').append('<noscript><div><img src="" style="position:absolute; left:-9999px;" alt="" /></div></noscript>');
             }
-            o.className = (o.className + " " + c).replace(/\s+/g, " ").replace(/(^ | $)/g, "");
-        }
-        // Функция удаляет класс из DOM-элемента. Вы можете использовать библиотеку jQuery или другой фреймворк
-        function removeClass (o, c) {
-            var re = new RegExp('(^|\\s)' + c + '(\\s|$)', 'g');
-            if (!o) {
-                return;
+        
+            function acceptCookies() {
+                Cookies.set('cookieConsent', 'true', { expires: 365 }); // Сохраняем согласие на год
+                cookieNotification.addClass('cookie-notification_hidden');
+                initCounter();
             }
-            o.className = o.className.replace(re, '$1').replace(/\s+/g, ' ').replace(/(^ | $)/g, '');
-        }
-        // Функция, которая прячет предупреждение
-        function hideMessage () {
-            addClass(messageElement, 'cookie-notification_hidden_yes');
-        }
-        // Функция, которая показывает предупреждение
-        function showMessage () {
-            removeClass(messageElement, 'cookie-notification_hidden_yes');
-        }
-        function saveAnswer () {
-            // Прячем предупреждение
-            hideMessage();
-
-            // Ставим cookies
-            Cookies.set('agreement', '1');
-        }
-        function initCounter () {
-            ym(100071738, 'init', {});
-            saveAnswer();
-        }
-        // Нажатие кнопки "Я согласен"
-        document.querySelector('#yes').addEventListener('click', function () {
-            initCounter();
+        
+            if (Cookies.get('cookieConsent') === 'true') {
+                cookieNotification.addClass('cookie-notification_hidden');
+                initCounter();
+            } else {
+                cookieNotification.removeClass('cookie-notification_hidden');
+            }
+        
+            acceptButton.on('click', acceptCookies);
+        
+            // Функция для отправки логов на сервер (оставил твою логику)
+            function logEvent(event) {
+                fetch('/api/log', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ event }),
+                })
+                .then(response => response.json())
+                .then(data => console.log(data.message))
+                .catch((error) => console.error('Ошибка:', error));
+            }
+        
+            // Обработка формы регистрации (оставил твою логику)
+            $('#registerForm').on('submit', function (event) {
+                event.preventDefault();
+                const email = $('#registerEmail').val();
+                const password = $('#registerPassword').val();
+        
+                const users = JSON.parse(localStorage.getItem('users')) || [];
+                if (users.some(user => user.email === email)) {
+                    alert('Пользователь с таким email уже существует.');
+                } else {
+                    saveUser (email, password);
+                    alert('Регистрация успешна!');
+                    logEvent(`Регистрация успешна для email: ${email}`); // Логируем событие
+                    $('#registerModal').modal('hide');
+                }
+            });
+        
+            // Обработка формы авторизации (оставил твою логику)
+            $('#loginForm').on('submit', function (event) {
+                event.preventDefault();
+                const email = $('#loginEmail').val();
+                const password = $('#loginPassword').val();
+        
+                if (checkUser (email, password)) {
+                    alert('Авторизация успешна!');
+                    logEvent(`Авторизация успешна для email: ${email}`); // Логируем событие
+                    $('#loginModal').modal('hide');
+                } else {
+                    alert('Ошибка авторизации. Проверьте email и пароль.');
+                    logEvent(`Ошибка авторизации для email: ${email}`); // Логируем событие
+                }
+            });
         });
-    </script>
+        </script>
 </body>
 </html>
