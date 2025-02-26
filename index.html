@@ -172,11 +172,11 @@
             <form id="appointmentForm">
                 <div class="form-group">
                     <label for="appointmentName">Имя</label>
-                    <input type="text" class="form-control" id="appointmentName" placeholder="Введите ваше имя" required>
+                    <input type="text" id="appointmentName" placeholder="Введите ваше имя" required>
                 </div>
                 <div class="form-group">
                     <label for="appointmentPhone">Телефон</label>
-                    <input type="tel" class="form-control" id="appointmentPhone" placeholder="Введите ваш телефон" required>
+                    <input type="tel" id="appointmentPhone" placeholder="Введите ваш телефон" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Отправить</button>
             </form>
@@ -217,11 +217,19 @@
             console.log('Имя:', name);
             console.log('Телефон:', phone);
 
+            // Отправка события в Яндекс.Метрику
+            ym(12345678, 'reachGoal', '1'); // 12345678 — ID вашего счётчика
+
             // Закрываем модальное окно
             appointmentModal.style.display = 'none';
 
             // Показываем сообщение об успешной отправке
             alert('Спасибо, ваша заявка принята!');
+        });
+
+        // Отправка события при клике на кнопку
+        bookAppointmentButton.addEventListener('click', function () {
+            ym(12345678, 'reachGoal', 'button_click'); // 12345678 — ID вашего счётчика
         });
     </script>
     <div class="cookie-notification cookie-notification_hidden_yes">
