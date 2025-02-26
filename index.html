@@ -7,20 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-
-    <!-- Подключаем jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-    <!--Подключаем Bootstrap JavaScript-->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
-    <!--Подключаем js-cookie -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"
-            integrity="sha512-QLcm3fDzLhmS2uLzXerzd+7nB+HlKdmE04w7VCSHqrY3F9s6WjJ+J1Gf3xU+hHl7vPq4UoK/m+2I0lGZJ/zUww=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <style>
-      /*Вставьте это в style.css*/
+        /* Эти стили нужно ПЕРЕНЕСТИ в style.css */
         a {
             text-decoration: none !important;
         }
@@ -65,6 +53,11 @@
             margin-bottom: 10px;
         }
 
+        .cookie-notification__buttons {
+            display: flex;
+            justify-content: center;
+        }
+
         .cookie-notification__button {
             background-color: #4CAF50;
             border: none;
@@ -80,43 +73,43 @@
     </style>
 </head>
 <body>
-<header>
-    <img src="" alt="Логотип студии DANCE LIFE" class="logo">
-    <div class="title">
-        <h1>DANCE LIFE</h1>
-    </div>
-</header>
-<nav>
-    <a href="index.html">Главная</a>
-    <a href="about.html">О нас</a>
-    <a href="services.html">Услуги</a>
-    <a href="contact.html">Контакты</a>
-    <a href="#" id="book-appointment" data-toggle="modal" data-target="#mainModal">Запись на пробное занятие</a>
-</nav>
+    <header>
+        <img src="" alt="Логотип студии DANCE LIFE" class="logo">
+        <div class="title">
+            <h1>DANCE LIFE</h1>
+        </div>
+    </header>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="services.html">Услуги</a>
+        <a href="contact.html">Контакты</a>
+        <a href="#" id="book-appointment" data-toggle="modal" data-target="#mainModal">Запись на пробное занятие</a>
+    </nav>
 
- <main>
+    <main>
         <section id="about">
             <h2>О нас</h2>
             <p>Добро пожаловать в нашу танцевальную студию! Мы предлагаем широкий спектр танцевальных классов для людей всех возрастов и уровней подготовки.</p>
-            <img src="фотоо.jpg" alt="Современный танец" width="1000px" height="600px">
+            <img src="" alt="Современный танец" width="1000px" height="600px">
         </section>
         <section id="services">
             <h2>Наши направления</h2>
             <div class="service-grid">
                 <div class="service">
-                    <img src="современные танцы - contemporary.webp" alt="Современный танец">
+                    <img src="" alt="Современный танец">
                     <h3>Современный танец</h3>
-                    <p>Современный танец - это свобода выражения, импровизация и динамика.  У нас вы изучите техники современного танца,  развитие пластики и координации.</p>
+                    <p>Современный танец - это свобода выражения, импровизация и динамика. У нас вы изучите техники современного танца, развитие пластики и координации.</p>
                 </div>
                 <div class="service">
-                    <img src="хип хоп.png" alt="Хип-хоп">
+                    <img src="" alt="Хип-хоп">
                     <h3>Хип-хоп</h3>
-                    <p>Хип-хоп - это стиль, который позволяет выразить себя через ритм и движения. У нас вы освоите базовые элементы хип-хопа,  развитие ритмики и  координации.</p>
+                    <p>Хип-хоп - это стиль, который позволяет выразить себя через ритм и движения. У нас вы освоите базовые элементы хип-хопа, развитие ритмики и координации.</p>
                 </div>
                 <div class="service">
-                    <img src="балет.jpg" alt="Балет">
+                    <img src="" alt="Балет">
                     <h3>Балет</h3>
-                    <p>Балет - это классика,  изящество  и  грация.  У нас вы  изучите  основы  балета,  развитие  пластики  и  координации.</p>
+                    <p>Балет - это классика, изящество и грация. У нас вы изучите основы балета, развитие пластики и координации.</p>
                 </div>
             </div>
         </section>
@@ -128,7 +121,7 @@
             <p>Адрес: г. Vladimir, ул. Пушкина, д. 10</p>
 
             <div class="button-container">
-                <a href="#" class="button" data-toggle="modal" data-target="#mainModal" style="color: white;">Записаться на пробное занятие</a>
+                <a href="#" class="button" data-toggle="modal" data-target="#mainModal">Записаться на пробное занятие</a>
             </div>
         </section>
     </main>
@@ -137,115 +130,118 @@
         <p>&copy; 2024 DANCE LIFE. Все права защищены.</p>
     </footer>
 
-<div class="modal fade" id="mainModal" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="mainModalLabel">Добро пожаловать!</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Выберите действие:</p>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Авторизация</button>
-                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registerModal">Регистрация</button>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Авторизация</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="loginForm">
-                    <div class="form-group">
-                        <label for="loginEmail">Email</label>
-                        <input type="email" class="form-control" id="loginEmail" placeholder="Введите email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="loginPassword">Пароль</label>
-                        <input type="password" class="form-control" id="loginPassword" placeholder="Введите пароль" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Войти</button>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+    <div class="modal fade" id="mainModal" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mainModalLabel">Добро пожаловать!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Выберите действие:</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Авторизация</button>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registerModal">Регистрация</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="registerModalLabel">Регистрация</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="registerForm">
-                    <div class="form-group">
-                        <label for="registerEmail">Email</label>
-                        <input type="email" class="form-control" id="registerEmail" placeholder="Введите email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="registerPassword">Пароль</label>
-                        <input type="password" class="form-control" id="registerPassword" placeholder="Введите пароль" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Авторизация</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="Введите email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Пароль</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Введите пароль" required autocomplete="current-password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Войти</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="cookie-notification cookie-notification_hidden">
-    <div class="cookie-notification__header">Предупреждение о сборе статистики</div>
-    <div class="cookie-notification__body">
-        <p>Этот сайт собирает статистику посещения и данные посетителей.</p>
-        <p><a href="/privacy-policy" style="color: blue;">Ссылка на Пользовательское соглашение вашего сайта или на Политику
-            конфиденциальности вашего сайта</a></p>
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Регистрация</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="registerEmail">Email</label>
+                            <input type="email" class="form-control" id="registerEmail" placeholder="Введите email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Пароль</label>
+                            <input type="password" class="form-control" id="registerPassword" placeholder="Введите пароль" required autocomplete="new-password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="cookie-notification__buttons">
-        <button class="cookie-notification__button" id="yes">Я согласен</button>
+
+    <div class="cookie-notification cookie-notification_hidden">
+        <div class="cookie-notification__header">Предупреждение о сборе статистики</div>
+        <div class="cookie-notification__body">
+            <p>Этот сайт собирает статистику посещения и данные посетителей.</p>
+            <p><a href="/privacy-policy" style="color: blue;">Ссылка на Пользовательское соглашение вашего сайта или на Политику
+                конфиденциальности вашего сайта</a></p>
+        </div>
+        <div class="cookie-notification__buttons">
+            <button class="cookie-notification__button" id="yes">Я согласен</button>
+        </div>
     </div>
-</div>
 
-<script>
-    $(document).ready(function () {
-        const cookieNotification = $('.cookie-notification');
-        const acceptButton = $('#yes');
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const cookieNotification = $('.cookie-notification');
+            const acceptButton = $('#yes');
 
-        function acceptCookies() {
-            cookieNotification.addClass('cookie-notification_hidden');
-            Cookies.set('cookieConsent', 'true', {expires: 365});
-        }
+            function acceptCookies() {
+                cookieNotification.addClass('cookie-notification_hidden');
+                Cookies.set('cookieConsent', 'true', {expires: 365});
+            }
 
-        if (Cookies.get('cookieConsent') === 'true') {
-            cookieNotification.addClass('cookie-notification_hidden');
-        } else {
-            cookieNotification.removeClass('cookie-notification_hidden');
-        }
+            if (Cookies.get('cookieConsent') === 'true') {
+                cookieNotification.addClass('cookie-notification_hidden');
+            } else {
+                cookieNotification.removeClass('cookie-notification_hidden');
+            }
 
-        acceptButton.on('click', acceptCookies);
-    });
-</script>
+            acceptButton.on('click', acceptCookies);
+        });
+    </script>
 </body>
 </html>
