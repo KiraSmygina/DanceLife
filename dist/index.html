@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Танцевальная студия</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script scr="script.js"></script>
+    <style>
+    a {
+        text-decoration: none !important;
+    }
+    header {
+        background-color: #450145;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav {
+        background-color: #f2f2f2;
+        padding: 10px;
+        display: flex;
+        justify-content: center; 
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="логотип танцевальной студии.png" alt="Логотип студии DANCE LIFE" class="logo">
+        <div class="title">
+            <h1>DANCE LIFE</h1>
+        </div>
+    </header>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="services.html">Услуги</a>
+        <a href="contact.html">Контакты</a>
+        <a href="#" id="book-appointment" data-toggle="modal" data-target="#mainModal">Запись на пробное занятие</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>О нас</h2>
+            <p>Добро пожаловать в нашу танцевальную студию! Мы предлагаем широкий спектр танцевальных классов для людей всех возрастов и уровней подготовки.</p>
+            <img src="фотоо.jpg" alt="Современный танец" width="1000px" height="600px">
+        </section>
+        <section id="services">
+            <h2>Наши направления</h2>
+            <div class="service-grid">
+                <div class="service">
+                    <img src="современные танцы - contemporary.webp" alt="Современный танец">
+                    <h3>Современный танец</h3>
+                    <p>Современный танец - это свобода выражения, импровизация и динамика.  У нас вы изучите техники современного танца,  развитие пластики и координации.</p>
+                </div>
+                <div class="service">
+                    <img src="хип хоп.png" alt="Хип-хоп">
+                    <h3>Хип-хоп</h3>
+                    <p>Хип-хоп - это стиль, который позволяет выразить себя через ритм и движения. У нас вы освоите базовые элементы хип-хопа,  развитие ритмики и  координации.</p>
+                </div>
+                <div class="service">
+                    <img src="балет.jpg" alt="Балет">
+                    <h3>Балет</h3>
+                    <p>Балет - это классика,  изящество  и  грация.  У нас вы  изучите  основы  балета,  развитие  пластики  и  координации.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Контакты</h2>
+            <p>Свяжитесь с нами, чтобы записаться на занятия:</p>
+            <p>Телефон: +7 (123) 456-78-90</p>
+            <p>Email: info@dancestudio.com</p>
+            <p>Адрес: г. Vladimir, ул. Пушкина, д. 10</p>
+
+            <div class="button-container">
+                <a href="#" class="button" data-toggle="modal" data-target="#mainModal" style="color: white;">Записаться на пробное занятие</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 DANCE LIFE. Все права защищены.</p>
+    </footer>
+    
+    <div class="modal fade" id="mainModal" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mainModalLabel">Добро пожаловать!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Выберите действие:</p>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Авторизация</button>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registerModal">Регистрация</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Авторизация</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="Введите email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Пароль</label>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Введите пароль" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Войти</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Регистрация</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="registerEmail">Email</label>
+                            <input type="email" class="form-control" id="registerEmail" placeholder="Введите email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Пароль</label>
+                            <input type="password" class="form-control" id="registerPassword" placeholder="Введите пароль" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Функция для отправки логов на сервер
+        function logEvent(event) {
+            fetch('/api/log', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ event }),
+            })
+            .then(response => response.json())
+            .then(data => console.log(data.message))
+            .catch((error) => console.error('Ошибка:', error));
+        }
+    
+        // Обработка формы регистрации
+        $('#registerForm').on('submit', function (event) {
+            event.preventDefault();
+            const email = $('#registerEmail').val();
+            const password = $('#registerPassword').val();
+    
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            if (users.some(user => user.email === email)) {
+                alert('Пользователь с таким email уже существует.');
+            } else {
+                saveUser (email, password);
+                alert('Регистрация успешна!');
+                logEvent(`Регистрация успешна для email: ${email}`); // Логируем событие
+                $('#registerModal').modal('hide');
+            }
+        });
+    
+        // Обработка формы авторизации
+        $('#loginForm').on('submit', function (event) {
+            event.preventDefault();
+            const email = $('#loginEmail').val();
+            const password = $('#loginPassword').val();
+    
+            if (checkUser (email, password)) {
+                alert('Авторизация успешна!');
+                logEvent(`Авторизация успешна для email: ${email}`); // Логируем событие
+                $('#loginModal').modal('hide');
+            } else {
+                alert('Ошибка авторизации. Проверьте email и пароль.');
+                logEvent(`Ошибка авторизации для email: ${email}`); // Логируем событие
+            }
+        });
+    </script>
+</body>
+</html>

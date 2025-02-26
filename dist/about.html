@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Танцевальная студия</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <header>
+        <img src="логотип танцевальной студии.png" alt="Логотип студии DANCE LIFE" class="logo">
+        <div class="title">
+            <h1>DANCE LIFE</h1>
+        </div>
+    </header>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="services.html">Услуги</a>
+        <a href="contact.html">Контакты</a>
+        <a href="#" id="book-appointment">Запись на пробное занятие</a>
+    </nav>
+
+    <section id="about" class="container py-5">
+        <h2 class="text-center mb-4">О нас</h2>
+        <p class="text-center">Добро пожаловать в нашу танцевальную студию! Мы предлагаем широкий спектр танцевальных классов для людей всех возрастов и уровней подготовки.</p>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <img src="фотоо.jpg" alt="Современный танец" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <p>Наша миссия – сделать танец доступным для всех. Мы верим, что каждый может найти свой стиль и раскрыть свой потенциал через движение. Присоединяйтесь к нам и станьте частью нашей танцевальной семьи!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="container py-5">
+        <h2 class="text-center mb-4">Наши направления</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="современные танцы - contemporary.webp" class="card-img-top" alt="Современный танец">
+                    <div class="card-body">
+                        <h5 class="card-title">Современный танец</h5>
+                        <p class="card-text">Современный танец - это свобода выражения, импровизация и динамика.  У нас вы изучите техники современного танца,  развитие пластики и координации.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="хип хоп.png" class="card-img-top" alt="Хип-хоп">
+                    <div class="card-body">
+                        <h5 class="card-title">Хип-хоп</h5>
+                        <p class="card-text">Хип-хоп - это стиль, который позволяет выразить себя через ритм и движения. У нас вы освоите базовые элементы хип-хопа,  развитие ритмики и  координации.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="балет.jpg" class="card-img-top" alt="Балет">
+                    <div class="card-body">
+                        <h5 class="card-title">Балет</h5>
+                        <p class="card-text">Классика, изящество и грация: узнайте основы балета.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container py-5">
+        <h2 class="text-center mb-4">Контакты</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <form id="myForm">
+                    <div class="form-group">
+                        <label for="name">Ваше имя:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Введите ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Ваш Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Введите ваш Email">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <p><b>Телефон:</b> +7 (123) 456-78-90</p>
+                <p><b>Email:</b> info@dancelife.com</p>
+                <p><b>Адрес:</b> г. Владимир, ул. Пушкина, д. 10</p>
+            </div>
+        </div>
+        <div class="button-container mt-4">
+            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#booking-form">Записаться на пробное занятие</a>
+        </div>
+    </section>
+
+    <footer class="container-fluid bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Dance Life. Все права защищены.</p>
+        <a href="about.html" class="text-white">Наверх</a>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
