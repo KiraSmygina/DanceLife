@@ -163,11 +163,11 @@
                     <form id="loginForm">
                         <div class="form-group">
                             <label for="loginEmail">Email</label>
-                            <input type="email" class="form-control" id="loginEmail" placeholder="Введите email" required autocomplete="username">
+                            <input type="email" class="form-control" id="loginEmail" placeholder="Введите email" required>
                         </div>
                         <div class="form-group">
                             <label for="loginPassword">Пароль</label>
-                            <input type="password" class="form-control" id="loginPassword" placeholder="Введите пароль" required autocomplete="current-password">
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Введите пароль" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Войти</button>
                     </form>
@@ -192,11 +192,11 @@
                     <form id="registerForm">
                         <div class="form-group">
                             <label for="registerEmail">Email</label>
-                            <input type="email" class="form-control" id="registerEmail" placeholder="Введите email" required autocomplete="username">
+                            <input type="email" class="form-control" id="registerEmail" placeholder="Введите email" required>
                         </div>
                         <div class="form-group">
                             <label for="registerPassword">Пароль</label>
-                            <input type="password" class="form-control" id="registerPassword" placeholder="Введите пароль" required autocomplete="new-password">
+                            <input type="password" class="form-control" id="registerPassword" placeholder="Введите пароль" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
                     </form>
@@ -273,29 +273,22 @@
         });
 
         // Логика для уведомления о cookies
-        document.addEventListener('DOMContentLoaded', function () {
-            const cookieNotification = document.querySelector('.cookie-notification');
-            const cookieButton = document.querySelector('#yes');
+        const cookieNotification = document.querySelector('.cookie-notification');
+        const cookieButton = document.querySelector('#yes');
 
-            if (!cookieButton) {
-                console.error('Кнопка "Я согласен" не найдена!');
-                return;
-            }
+        if (!Cookies.get('agreement')) {
+            cookieNotification.classList.remove('cookie-notification_hidden_yes');
+        }
 
-            if (!Cookies.get('agreement')) {
-                cookieNotification.classList.remove('cookie-notification_hidden_yes');
-            }
-
-            cookieButton.addEventListener('click', () => {
-                Cookies.set('agreement', '1', { expires: 365 });
-                cookieNotification.classList.add('cookie-notification_hidden_yes');
-                initCounter();
-            });
+        cookieButton.addEventListener('click', () => {
+            Cookies.set('agreement', '1', { expires: 365 });
+            cookieNotification.classList.add('cookie-notification_hidden_yes');
+            initCounter();
         });
 
         // Инициализация Яндекс.Метрики
         function initCounter() {
-            ym(100071738, 'init', { // Замените 100071738 на ваш ID
+            ym(100071738, 'init', {
                 clickmap: true,
                 trackLinks: true,
                 accurateTrackBounce: true,
