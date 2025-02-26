@@ -6,8 +6,9 @@
     <title>Танцевальная студия</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.js"></script>
     <style>
         a {
@@ -25,7 +26,7 @@
             background-color: #f2f2f2;
             padding: 10px;
             display: flex;
-            justify-content: center; 
+            justify-content: center;
         }
         * {
             box-sizing: border-box;
@@ -54,13 +55,13 @@
         }
     </style>
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
+    <script type="text/javascript">
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
        m[i].l=1*new Date();
        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    
+
        ym(100071738, "init", {
             clickmap:true,
             trackLinks:true,
@@ -128,7 +129,7 @@
     <footer>
         <p>&copy; 2024 DANCE LIFE. Все права защищены.</p>
     </footer>
-    
+
     <div class="modal fade" id="mainModal" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -208,8 +209,11 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <div class="cookie-notification">
+        <div class="cookie-notification__header">Мы используем cookies</div>
+        <div class="cookie-notification__body">Продолжая использовать сайт, вы соглашаетесь с использованием cookies.</div>
+        <button id="yes">Принять</button>
+    </div>
 
     <script>
         // Функция для отправки логов на сервер
