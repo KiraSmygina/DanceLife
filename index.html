@@ -225,22 +225,48 @@
             .catch((error) => console.error('Ошибка:', error));
         }
     
-        // Обработка формы регистрации
-        $('#registerForm').on('submit', function (event) {
-            event.preventDefault();
-            const email = $('#registerEmail').val();
-            const password = $('#registerPassword').val();
+       // Функция для сохранения пользователя
+function saveUser(email, password) {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    users.push({ email, password });
+    localStorage.setItem('users', JSON.stringify(users));
+}
+
+// Функция для отправки логов на сервер
+function logEvent(event) {
+    fetch('/api/log', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ event }),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data.message))
+    .catch((error) => console.error('Ошибка:', error));
+}
+
+    // Обработка формы регистрации
+    $('#registerForm').on('submit', function (event) {
+        event.preventDefault(); // Предотвращаем стандартное поведение формы
     
-            const users = JSON.parse(localStorage.getItem('users')) || [];
-            if (users.some(user => user.email === email)) {
-                alert('Пользователь с таким email уже существует.');
-            } else {
-                saveUser (email, password);
-                alert('Регистрация успешна!');
-                logEvent(`Регистрация успешна для email: ${email}`); // Логируем событие
-                $('#registerModal').modal('hide');
-            }
-        });
+        const email = $('#registerEmail').val();
+        const password = $('#registerPassword').val();
+    
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        if (users.some(user => user.email === email)) {
+            alert('Пользователь с таким email уже существует.');
+        } else {
+            saveUser(email, password); // Сохраняем пользователя
+            alert('Регистрация успешна!');
+            logEvent(`Регистрация успешна для email: ${email}`); // Логируем событие
+    
+            // Отправка события в Яндекс.Метрику
+            ym(100071738, 'reachGoal', '1'); // 100071738 — ID вашего счётчика
+    
+            $('#registerModal').modal('hide'); // Закрываем модальное окно
+        }
+    });
     
         // Обработка формы авторизации
         $('#loginForm').on('submit', function (event) {
