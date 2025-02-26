@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.js"></script>
     <style>
         a {
             text-decoration: none !important;
@@ -27,13 +24,6 @@
             padding: 10px;
             display: flex;
             justify-content: center;
-        }
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            width: 100%;
-            height: 100%;
         }
         .cookie-notification {
             position: fixed;
@@ -54,23 +44,6 @@
             margin-bottom: 10px;
         }
     </style>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-       m[i].l=1*new Date();
-       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-       ym(100071738, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-       });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/100071738" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
 </head>
 <body>
     <header>
@@ -90,39 +63,7 @@
     <main>
         <section id="about">
             <h2>О нас</h2>
-            <p>Добро пожаловать в нашу танцевальную студию! Мы предлагаем широкий спектр танцевальных классов для людей всех возрастов и уровней подготовки.</p>
-            <img src="фотоо.jpg" alt="Современный танец" width="1000px" height="600px">
-        </section>
-        <section id="services">
-            <h2>Наши направления</h2>
-            <div class="service-grid">
-                <div class="service">
-                    <img src="современные танцы - contemporary.webp" alt="Современный танец">
-                    <h3>Современный танец</h3>
-                    <p>Современный танец - это свобода выражения, импровизация и динамика. У нас вы изучите техники современного танца, развитие пластики и координации.</p>
-                </div>
-                <div class="service">
-                    <img src="хип хоп.png" alt="Хип-хоп">
-                    <h3>Хип-хоп</h3>
-                    <p>Хип-хоп - это стиль, который позволяет выразить себя через ритм и движения. У нас вы освоите базовые элементы хип-хопа, развитие ритмики и координации.</p>
-                </div>
-                <div class="service">
-                    <img src="балет.jpg" alt="Балет">
-                    <h3>Балет</h3>
-                    <p>Балет - это классика, изящество и грация. У нас вы изучите основы балета, развитие пластики и координации.</p>
-                </div>
-            </div>
-        </section>
-        <section id="contact">
-            <h2>Контакты</h2>
-            <p>Свяжитесь с нами, чтобы записаться на занятия:</p>
-            <p>Телефон: +7 (123) 456-78-90</p>
-            <p>Email: info@dancestudio.com</p>
-            <p>Адрес: г. Владимир, ул. Пушкина, д. 10</p>
-
-            <div class="button-container">
-                <a href="#" class="button" data-toggle="modal" data-target="#mainModal" style="color: white;">Записаться на пробное занятие</a>
-            </div>
+            <p>Добро пожаловать в нашу танцевальную студию!</p>
         </section>
     </main>
 
@@ -130,175 +71,32 @@
         <p>&copy; 2024 DANCE LIFE. Все права защищены.</p>
     </footer>
 
-    <div class="modal fade" id="mainModal" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="mainModalLabel">Добро пожаловать!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Выберите действие:</p>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Авторизация</button>
-                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#registerModal">Регистрация</button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Авторизация</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="loginForm">
-                        <div class="form-group">
-                            <label for="loginEmail">Email</label>
-                            <input type="email" class="form-control" id="loginEmail" placeholder="Введите email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="loginPassword">Пароль</label>
-                            <input type="password" class="form-control" id="loginPassword" placeholder="Введите пароль" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Войти</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="registerModalLabel">Регистрация</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Закрыть">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="registerForm">
-                        <div class="form-group">
-                            <label for="registerEmail">Email</label>
-                            <input type="email" class="form-control" id="registerEmail" placeholder="Введите email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="registerPassword">Пароль</label>
-                            <input type="password" class="form-control" id="registerPassword" placeholder="Введите пароль" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="cookie-notification">
         <div class="cookie-notification__header">Мы используем cookies</div>
         <div class="cookie-notification__body">Продолжая использовать сайт, вы соглашаетесь с использованием cookies.</div>
         <button id="yes">Принять</button>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.min.js"></script>
     <script>
-        // Функция для отправки логов на сервер
-        function logEvent(event) {
-            fetch('/api/log', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ event }),
-            })
-            .then(response => response.json())
-            .then(data => console.log(data.message))
-            .catch((error) => console.error('Ошибка:', error));
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            // Логика для уведомления о cookies
+            const cookieNotification = document.querySelector('.cookie-notification');
+            const cookieButton = document.querySelector('#yes');
 
-        // Функция для сохранения пользователя в localStorage
-        function saveUser(email, password) {
-            const users = JSON.parse(localStorage.getItem('users')) || [];
-            users.push({ email, password });
-            localStorage.setItem('users', JSON.stringify(users));
-        }
+            if (!Cookies.get('agreement')) {
+                cookieNotification.classList.remove('cookie-notification_hidden_yes');
+            }
 
-        // Функция для проверки пользователя в localStorage
-        function checkUser(email, password) {
-            const users = JSON.parse(localStorage.getItem('users')) || [];
-            return users.some(user => user.email === email && user.password === password);
-        }
-
-        // Обработка формы регистрации
-        $('#registerForm').on('submit', function (event) {
-            event.preventDefault();
-            const email = $('#registerEmail').val();
-            const password = $('#registerPassword').val();
-
-            const users = JSON.parse(localStorage.getItem('users')) || [];
-            if (users.some(user => user.email === email)) {
-                alert('Пользователь с таким email уже существует.');
-            } else {
-                saveUser(email, password);
-                alert('Регистрация успешна!');
-                logEvent(`Регистрация успешна для email: ${email}`);
-                $('#registerModal').modal('hide');
+            if (cookieButton) {
+                cookieButton.addEventListener('click', () => {
+                    Cookies.set('agreement', '1', { expires: 365 });
+                    cookieNotification.classList.add('cookie-notification_hidden_yes');
+                });
             }
         });
-
-        // Обработка формы авторизации
-        $('#loginForm').on('submit', function (event) {
-            event.preventDefault();
-            const email = $('#loginEmail').val();
-            const password = $('#loginPassword').val();
-
-            if (checkUser(email, password)) {
-                alert('Авторизация успешна!');
-                logEvent(`Авторизация успешна для email: ${email}`);
-                $('#loginModal').modal('hide');
-            } else {
-                alert('Ошибка авторизации. Проверьте email и пароль.');
-                logEvent(`Ошибка авторизации для email: ${email}`);
-            }
-        });
-
-        // Логика для уведомления о cookies
-        const cookieNotification = document.querySelector('.cookie-notification');
-        const cookieButton = document.querySelector('#yes');
-
-        if (!Cookies.get('agreement')) {
-            cookieNotification.classList.remove('cookie-notification_hidden_yes');
-        }
-
-        cookieButton.addEventListener('click', () => {
-            Cookies.set('agreement', '1', { expires: 365 });
-            cookieNotification.classList.add('cookie-notification_hidden_yes');
-            initCounter();
-        });
-
-        // Инициализация Яндекс.Метрики
-        function initCounter() {
-            ym(100071738, 'init', {
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-                webvisor: true
-            });
-        }
     </script>
 </body>
 </html>
