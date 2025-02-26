@@ -165,7 +165,7 @@
         <p>&copy; 2024 DANCE LIFE. Все права защищены.</p>
     </footer>
     
-    <div id="appointmentModal" class="modal">
+      <div id="appointmentModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Запись на занятие</h2>
@@ -210,26 +210,16 @@
         document.getElementById('appointmentForm').addEventListener('submit', function (event) {
             event.preventDefault(); // Предотвращаем стандартное поведение формы
 
-            const name = document.getElementById('appointmentName').value;
-            const phone = document.getElementById('appointmentPhone').value;
-
-            // Логируем данные
-            console.log('Имя:', name);
-            console.log('Телефон:', phone);
-
             // Отправка события в Яндекс.Метрику
-            ym(12345678, 'reachGoal', '1'); // 12345678 — ID вашего счётчика
+            if (typeof ym !== 'undefined') {
+                ym(100071738, 'reachGoal', '1'); // 100071738 — ID вашего счётчика
+                console.log('Событие form_submit отправлено в Яндекс.Метрику');
+            } else {
+                console.error('Яндекс.Метрика не загружена');
+            }
 
-            // Закрываем модальное окно
-            appointmentModal.style.display = 'none';
-
-            // Показываем сообщение об успешной отправке
-            alert('Спасибо, ваша заявка принята!');
-        });
-
-        // Отправка события при клике на кнопку
-        bookAppointmentButton.addEventListener('click', function () {
-            ym(12345678, 'reachGoal', 'button_click'); // 12345678 — ID вашего счётчика
+            // Дополнительные действия (например, отправка данных на сервер)
+            alert('Форма успешно отправлена!');
         });
     </script>
     <div class="cookie-notification cookie-notification_hidden_yes">
